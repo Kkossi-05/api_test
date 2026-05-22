@@ -13,9 +13,9 @@ import static org.hamcrest.Matchers.*;
 
 public class UserApiTest extends BaseTest {
 
-    // ──────────────────────────────────────────────
-    // GET /users/1  →  Kullanıcıyı ID ile getir
-    // ──────────────────────────────────────────────
+    
+    // GET /users/1  →  //Kullanıcıyı ID ile getir
+    
     @Test
     @DisplayName("GET /users/1 - Geçerli kullanıcı döner")
     public void testGetUserById() {
@@ -37,7 +37,7 @@ public class UserApiTest extends BaseTest {
                 .body("email",    containsString("@"))
                 .extract().response();
 
-        // ✅ 3) Yanıt Süresi Kontrolü
+        // 3) Yanıt Süresi Kontrolü
         long elapsed = System.currentTimeMillis() - startTime;
         assertThat("Yanıt süresi " + getTimeout() + "ms altında olmalı",
                 elapsed, lessThan(getTimeout()));
